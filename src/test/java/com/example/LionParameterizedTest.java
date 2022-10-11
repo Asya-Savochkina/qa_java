@@ -19,21 +19,19 @@ public class LionParameterizedTest {
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
-    private final String sex;
-    private final boolean result;
 
-    public LionParameterizedTest(String sex, boolean result) {
-        this.sex = sex;
-        this.result = result;
-    }
-
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] getTestData() {
         return new Object[][] {
                 {"Самец", true},
                 {"Самка", false},
         };
     }
+    @Parameterized.Parameter(0)
+    public String sex;
+
+    @Parameterized.Parameter(1)
+    public boolean result;
 
     @Test
     public void haveManeWithDifferentSex() throws Exception {

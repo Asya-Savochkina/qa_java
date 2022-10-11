@@ -10,10 +10,10 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.junit.Assert.*;
+
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
-
-@Mock
+    @Mock
     Feline feline;
 
     @Test
